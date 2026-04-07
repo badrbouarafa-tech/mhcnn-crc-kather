@@ -1,0 +1,7 @@
+variant,label,test_acc,f1_macro,f1_weighted,f1_minority,params_M,test_loss
+V1,Flat baseline,95.47,0.9553,,0.9788,11.4,0.163
+V2,mHC-2 (Ours),95.87,0.9588,,0.9763,11.7,0.1464
+V3,mHC-3 (3 levels),94.93,0.9495,,0.9681,12.0,0.1397
+V4,Independent branches,95.2,0.9521,,0.9762,22.9,0.1555
+V5,Sequential training,91.2,0.9133,,0.9305,11.7,0.2475
+V6,mHC-2 + Focal Loss,93.33,0.9332,,0.9625,11.7,0.1285

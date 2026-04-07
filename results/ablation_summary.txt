@@ -1,0 +1,487 @@
+[ablation] Configuration :
+  lr                        = 0.0001
+  weight_decay              = 1e-05
+  epochs                    = 50
+  batch_size                = 32
+  alpha                     = 0.3
+  focal_gamma               = 2.0
+  patience                  = 10
+  seq_phase1_epochs         = 20
+  seq_phase2_epochs         = 30
+  device                    = cuda
+  save_dir                  = checkpoints
+  verbose                   = True
+[ablation] Chargement des données …
+[dataset] Dataset déjà présent dans data/kather2016.
+[dataset] 5000 images trouvées, 8 classes.
+[dataset] Split → train=3500, val=750, test=750
+
+############################################################
+# Variante V1 : Flat baseline
+############################################################
+
+============================================================
+Entraînement V1 | 11.4M params | device=cuda
+============================================================
+  [V1] Ep 01/50 | loss 0.7657/0.2430 | acc 92.4% | F1 0.9240 | 8.4s
+  [V1] Ep 02/50 | loss 0.3311/0.2129 | acc 93.1% | F1 0.9303 | 8.0s
+  [V1] Ep 03/50 | loss 0.2676/0.1666 | acc 94.4% | F1 0.9433 | 8.0s
+  [V1] Ep 04/50 | loss 0.2328/0.1779 | acc 94.4% | F1 0.9443 | 7.9s
+  [V1] Ep 05/50 | loss 0.2019/0.1841 | acc 94.9% | F1 0.9492 | 7.9s
+  [V1] Ep 06/50 | loss 0.1755/0.2906 | acc 89.9% | F1 0.9002 | 7.9s
+  [V1] Ep 07/50 | loss 0.1440/0.1550 | acc 94.5% | F1 0.9444 | 8.0s
+  [V1] Ep 08/50 | loss 0.1445/0.2010 | acc 94.9% | F1 0.9492 | 8.0s
+  [V1] Ep 09/50 | loss 0.1250/0.1453 | acc 94.8% | F1 0.9486 | 8.0s
+  [V1] Ep 10/50 | loss 0.1236/0.1455 | acc 95.1% | F1 0.9510 | 8.0s
+  [V1] Ep 11/50 | loss 0.1105/0.1550 | acc 95.2% | F1 0.9516 | 7.9s
+  [V1] Ep 12/50 | loss 0.1033/0.1806 | acc 94.7% | F1 0.9462 | 7.9s
+  [V1] Ep 13/50 | loss 0.0975/0.1329 | acc 95.7% | F1 0.9572 | 8.0s
+  [V1] Ep 14/50 | loss 0.0806/0.1591 | acc 95.5% | F1 0.9544 | 8.0s
+  [V1] Ep 15/50 | loss 0.0889/0.1878 | acc 94.7% | F1 0.9466 | 8.0s
+  [V1] Ep 16/50 | loss 0.0762/0.1432 | acc 95.7% | F1 0.9573 | 8.0s
+  [V1] Ep 17/50 | loss 0.0711/0.1837 | acc 93.9% | F1 0.9388 | 7.9s
+  [V1] Ep 18/50 | loss 0.0647/0.1536 | acc 95.7% | F1 0.9576 | 8.0s
+  [V1] Ep 19/50 | loss 0.0460/0.1365 | acc 96.7% | F1 0.9666 | 8.0s
+  [V1] Ep 20/50 | loss 0.0577/0.1729 | acc 94.9% | F1 0.9502 | 8.0s
+  [V1] Ep 21/50 | loss 0.0468/0.1682 | acc 95.3% | F1 0.9525 | 8.0s
+  [V1] Ep 22/50 | loss 0.0497/0.1728 | acc 96.1% | F1 0.9610 | 8.0s
+  [V1] Ep 23/50 | loss 0.0577/0.1639 | acc 95.5% | F1 0.9547 | 8.0s
+  [V1] Ep 24/50 | loss 0.0531/0.1603 | acc 96.0% | F1 0.9603 | 8.0s
+  [V1] Ep 25/50 | loss 0.0313/0.1543 | acc 96.0% | F1 0.9600 | 8.0s
+  [V1] Ep 26/50 | loss 0.0365/0.1688 | acc 95.7% | F1 0.9576 | 8.0s
+  [V1] Ep 27/50 | loss 0.0348/0.1531 | acc 95.9% | F1 0.9588 | 8.0s
+  [V1] Ep 28/50 | loss 0.0265/0.1318 | acc 97.2% | F1 0.9720 | 8.0s
+  [V1] Ep 29/50 | loss 0.0298/0.1083 | acc 96.9% | F1 0.9693 | 8.0s
+  [V1] Ep 30/50 | loss 0.0289/0.1288 | acc 96.5% | F1 0.9654 | 8.0s
+  [V1] Ep 31/50 | loss 0.0258/0.1429 | acc 96.7% | F1 0.9667 | 8.0s
+  [V1] Ep 32/50 | loss 0.0211/0.1292 | acc 96.8% | F1 0.9679 | 8.0s
+  [V1] Ep 33/50 | loss 0.0212/0.1372 | acc 96.5% | F1 0.9651 | 8.0s
+  [V1] Ep 34/50 | loss 0.0191/0.1389 | acc 96.4% | F1 0.9638 | 8.0s
+  [V1] Ep 35/50 | loss 0.0198/0.1290 | acc 97.1% | F1 0.9706 | 8.0s
+  [V1] Ep 36/50 | loss 0.0192/0.1277 | acc 96.9% | F1 0.9693 | 8.0s
+  [V1] Ep 37/50 | loss 0.0223/0.1312 | acc 96.8% | F1 0.9679 | 8.0s
+  [V1] Ep 38/50 | loss 0.0178/0.1353 | acc 96.9% | F1 0.9693 | 8.0s
+  [V1] Early stopping à l'epoch 38.
+[utils] Courbes sauvegardées : results/training_curves/V1_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V1 (results/V1)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9574    0.9574    0.9574        94
+         STR     0.9651    0.8925    0.9274        93
+         COM     0.8224    0.9362    0.8756        94
+         LYM     0.9780    0.9468    0.9622        94
+         DEB     0.9891    0.9681    0.9785        94
+         MUC     0.9891    0.9785    0.9838        93
+         ADI     1.0000    0.9574    0.9783        94
+         EMP     0.9592    1.0000    0.9792        94
+
+    accuracy                         0.9547       750
+   macro avg     0.9576    0.9546    0.9553       750
+weighted avg     0.9575    0.9547    0.9553       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V1/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V1/f1_per_class.png
+[ablation] V1 terminé en 5.1 min
+
+############################################################
+# Variante V2 : mHC-2 (Ours)
+############################################################
+
+============================================================
+Entraînement V2 | 11.7M params | device=cuda
+============================================================
+  [V2] Ep 01/50 | loss 0.6418/0.2299 | acc 92.7% | F1 0.9264 | 8.0s
+  [V2] Ep 02/50 | loss 0.2805/0.2011 | acc 91.9% | F1 0.9173 | 8.0s
+  [V2] Ep 03/50 | loss 0.2318/0.1762 | acc 93.5% | F1 0.9327 | 8.0s
+  [V2] Ep 04/50 | loss 0.1992/0.1890 | acc 92.0% | F1 0.9176 | 8.0s
+  [V2] Ep 05/50 | loss 0.1559/0.1748 | acc 92.1% | F1 0.9197 | 8.0s
+  [V2] Ep 06/50 | loss 0.1542/0.1619 | acc 94.4% | F1 0.9440 | 8.0s
+  [V2] Ep 07/50 | loss 0.1467/0.3124 | acc 83.6% | F1 0.8014 | 8.0s
+  [V2] Ep 08/50 | loss 0.1201/0.1868 | acc 92.5% | F1 0.9223 | 8.0s
+  [V2] Ep 09/50 | loss 0.1095/0.1368 | acc 95.2% | F1 0.9522 | 8.1s
+  [V2] Ep 10/50 | loss 0.0982/0.1515 | acc 95.1% | F1 0.9503 | 8.0s
+  [V2] Ep 11/50 | loss 0.0865/0.1569 | acc 94.5% | F1 0.9436 | 8.0s
+  [V2] Ep 12/50 | loss 0.0826/0.1468 | acc 94.3% | F1 0.9429 | 8.0s
+  [V2] Ep 13/50 | loss 0.0851/0.1804 | acc 94.3% | F1 0.9429 | 8.0s
+  [V2] Ep 14/50 | loss 0.0853/0.1849 | acc 93.5% | F1 0.9365 | 8.0s
+  [V2] Ep 15/50 | loss 0.0725/0.1789 | acc 93.7% | F1 0.9362 | 8.0s
+  [V2] Ep 16/50 | loss 0.0713/0.1609 | acc 94.5% | F1 0.9459 | 8.0s
+  [V2] Ep 17/50 | loss 0.0679/0.1509 | acc 95.1% | F1 0.9507 | 8.0s
+  [V2] Ep 18/50 | loss 0.0780/0.1780 | acc 93.3% | F1 0.9321 | 8.0s
+  [V2] Ep 19/50 | loss 0.0672/0.1192 | acc 95.6% | F1 0.9556 | 8.0s
+  [V2] Ep 20/50 | loss 0.0490/0.1404 | acc 95.7% | F1 0.9572 | 8.0s
+  [V2] Ep 21/50 | loss 0.0411/0.1551 | acc 95.1% | F1 0.9509 | 8.0s
+  [V2] Ep 22/50 | loss 0.0393/0.1529 | acc 96.1% | F1 0.9615 | 8.0s
+  [V2] Ep 23/50 | loss 0.0379/0.1348 | acc 95.7% | F1 0.9572 | 8.0s
+  [V2] Ep 24/50 | loss 0.0363/0.1237 | acc 95.6% | F1 0.9559 | 8.0s
+  [V2] Ep 25/50 | loss 0.0379/0.1886 | acc 94.1% | F1 0.9418 | 8.0s
+  [V2] Ep 26/50 | loss 0.0284/0.1560 | acc 95.1% | F1 0.9500 | 8.0s
+  [V2] Ep 27/50 | loss 0.0237/0.1324 | acc 96.0% | F1 0.9598 | 8.0s
+  [V2] Ep 28/50 | loss 0.0300/0.1465 | acc 96.0% | F1 0.9597 | 8.0s
+  [V2] Ep 29/50 | loss 0.0235/0.1252 | acc 96.3% | F1 0.9623 | 8.0s
+  [V2] Ep 30/50 | loss 0.0262/0.1417 | acc 95.7% | F1 0.9573 | 8.0s
+  [V2] Ep 31/50 | loss 0.0209/0.1387 | acc 96.1% | F1 0.9613 | 8.0s
+  [V2] Ep 32/50 | loss 0.0167/0.1516 | acc 95.7% | F1 0.9573 | 8.0s
+  [V2] Ep 33/50 | loss 0.0167/0.1288 | acc 95.6% | F1 0.9559 | 8.0s
+  [V2] Ep 34/50 | loss 0.0226/0.1378 | acc 95.7% | F1 0.9570 | 8.0s
+  [V2] Ep 35/50 | loss 0.0166/0.1425 | acc 96.0% | F1 0.9596 | 8.0s
+  [V2] Ep 36/50 | loss 0.0134/0.1365 | acc 95.7% | F1 0.9571 | 8.0s
+  [V2] Ep 37/50 | loss 0.0155/0.1311 | acc 96.4% | F1 0.9637 | 8.1s
+  [V2] Ep 38/50 | loss 0.0132/0.1494 | acc 96.4% | F1 0.9636 | 8.0s
+  [V2] Ep 39/50 | loss 0.0120/0.1293 | acc 96.7% | F1 0.9664 | 8.0s
+  [V2] Ep 40/50 | loss 0.0090/0.1400 | acc 96.7% | F1 0.9665 | 8.1s
+  [V2] Ep 41/50 | loss 0.0097/0.1460 | acc 96.1% | F1 0.9613 | 8.0s
+  [V2] Ep 42/50 | loss 0.0093/0.1285 | acc 96.5% | F1 0.9652 | 8.0s
+  [V2] Ep 43/50 | loss 0.0081/0.1322 | acc 96.1% | F1 0.9612 | 8.0s
+  [V2] Ep 44/50 | loss 0.0088/0.1338 | acc 96.1% | F1 0.9612 | 8.0s
+  [V2] Ep 45/50 | loss 0.0110/0.1281 | acc 96.4% | F1 0.9638 | 8.0s
+  [V2] Ep 46/50 | loss 0.0120/0.1282 | acc 96.7% | F1 0.9665 | 8.0s
+  [V2] Ep 47/50 | loss 0.0089/0.1383 | acc 96.4% | F1 0.9638 | 8.0s
+  [V2] Ep 48/50 | loss 0.0081/0.1324 | acc 96.5% | F1 0.9652 | 8.0s
+  [V2] Ep 49/50 | loss 0.0070/0.1354 | acc 96.4% | F1 0.9638 | 8.0s
+  [V2] Ep 50/50 | loss 0.0087/0.1349 | acc 96.5% | F1 0.9652 | 8.0s
+[utils] Courbes sauvegardées : results/training_curves/V2_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V2 (results/V2)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9780    0.9468    0.9622        94
+         STR     0.9438    0.9032    0.9231        93
+         COM     0.8713    0.9362    0.9026        94
+         LYM     0.9684    0.9787    0.9735        94
+         DEB     0.9787    0.9787    0.9787        94
+         MUC     0.9891    0.9785    0.9838        93
+         ADI     0.9890    0.9574    0.9730        94
+         EMP     0.9588    0.9894    0.9738        94
+
+    accuracy                         0.9587       750
+   macro avg     0.9596    0.9586    0.9588       750
+weighted avg     0.9596    0.9587    0.9588       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V2/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V2/f1_per_class.png
+[ablation] V2 terminé en 6.7 min
+
+############################################################
+# Variante V3 : mHC-3 (3 levels)
+############################################################
+
+============================================================
+Entraînement V3 | 12.0M params | device=cuda
+============================================================
+  [V3] Ep 01/50 | loss 0.6136/0.2379 | acc 91.5% | F1 0.9134 | 8.3s
+  [V3] Ep 02/50 | loss 0.2699/0.1937 | acc 92.1% | F1 0.9194 | 8.2s
+  [V3] Ep 03/50 | loss 0.2236/0.3384 | acc 86.1% | F1 0.8411 | 8.2s
+  [V3] Ep 04/50 | loss 0.1771/0.1401 | acc 94.8% | F1 0.9476 | 8.2s
+  [V3] Ep 05/50 | loss 0.1653/0.1333 | acc 93.9% | F1 0.9380 | 8.2s
+  [V3] Ep 06/50 | loss 0.1543/0.1720 | acc 91.9% | F1 0.9181 | 8.2s
+  [V3] Ep 07/50 | loss 0.1426/0.1228 | acc 94.9% | F1 0.9494 | 8.2s
+  [V3] Ep 08/50 | loss 0.1328/0.1719 | acc 93.1% | F1 0.9310 | 8.3s
+  [V3] Ep 09/50 | loss 0.1123/0.1672 | acc 92.9% | F1 0.9287 | 8.3s
+  [V3] Ep 10/50 | loss 0.0957/0.1027 | acc 96.0% | F1 0.9599 | 8.3s
+  [V3] Ep 11/50 | loss 0.1063/0.1444 | acc 96.0% | F1 0.9598 | 8.2s
+  [V3] Ep 12/50 | loss 0.0833/0.1575 | acc 94.3% | F1 0.9424 | 8.3s
+  [V3] Ep 13/50 | loss 0.0821/0.1347 | acc 95.3% | F1 0.9536 | 8.2s
+  [V3] Ep 14/50 | loss 0.0780/0.1511 | acc 94.3% | F1 0.9427 | 8.2s
+  [V3] Ep 15/50 | loss 0.0548/0.1104 | acc 96.1% | F1 0.9612 | 8.3s
+  [V3] Ep 16/50 | loss 0.0757/0.1378 | acc 95.3% | F1 0.9533 | 8.2s
+  [V3] Ep 17/50 | loss 0.0671/0.1698 | acc 94.0% | F1 0.9405 | 8.2s
+  [V3] Ep 18/50 | loss 0.0576/0.1225 | acc 96.3% | F1 0.9624 | 8.2s
+  [V3] Ep 19/50 | loss 0.0560/0.1157 | acc 95.3% | F1 0.9529 | 8.2s
+  [V3] Ep 20/50 | loss 0.0463/0.1466 | acc 95.9% | F1 0.9586 | 8.2s
+  [V3] Ep 21/50 | loss 0.0457/0.1390 | acc 96.0% | F1 0.9600 | 8.2s
+  [V3] Ep 22/50 | loss 0.0339/0.1207 | acc 95.9% | F1 0.9587 | 8.2s
+  [V3] Ep 23/50 | loss 0.0254/0.1134 | acc 96.0% | F1 0.9600 | 8.2s
+  [V3] Ep 24/50 | loss 0.0302/0.1169 | acc 96.4% | F1 0.9639 | 8.2s
+  [V3] Ep 25/50 | loss 0.0242/0.1213 | acc 96.1% | F1 0.9613 | 8.2s
+  [V3] Ep 26/50 | loss 0.0314/0.1133 | acc 96.3% | F1 0.9628 | 8.2s
+  [V3] Ep 27/50 | loss 0.0251/0.1047 | acc 96.3% | F1 0.9626 | 8.3s
+  [V3] Ep 28/50 | loss 0.0205/0.1043 | acc 96.5% | F1 0.9654 | 8.2s
+  [V3] Ep 29/50 | loss 0.0231/0.0979 | acc 96.4% | F1 0.9639 | 8.3s
+  [V3] Ep 30/50 | loss 0.0157/0.0905 | acc 97.5% | F1 0.9746 | 8.3s
+  [V3] Ep 31/50 | loss 0.0214/0.0971 | acc 96.7% | F1 0.9666 | 8.2s
+  [V3] Ep 32/50 | loss 0.0175/0.1054 | acc 96.7% | F1 0.9666 | 8.2s
+  [V3] Ep 33/50 | loss 0.0173/0.1145 | acc 96.4% | F1 0.9641 | 8.2s
+  [V3] Ep 34/50 | loss 0.0089/0.1086 | acc 96.5% | F1 0.9652 | 8.3s
+  [V3] Ep 35/50 | loss 0.0123/0.1157 | acc 96.3% | F1 0.9628 | 8.3s
+  [V3] Ep 36/50 | loss 0.0140/0.1199 | acc 96.5% | F1 0.9653 | 8.2s
+  [V3] Ep 37/50 | loss 0.0107/0.1139 | acc 96.7% | F1 0.9666 | 8.3s
+  [V3] Ep 38/50 | loss 0.0103/0.1202 | acc 96.5% | F1 0.9651 | 8.2s
+  [V3] Ep 39/50 | loss 0.0091/0.1108 | acc 96.4% | F1 0.9638 | 8.2s
+  [V3] Ep 40/50 | loss 0.0117/0.1237 | acc 96.4% | F1 0.9638 | 8.3s
+  [V3] Early stopping à l'epoch 40.
+[utils] Courbes sauvegardées : results/training_curves/V3_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V3 (results/V3)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9565    0.9362    0.9462        94
+         STR     0.9149    0.9247    0.9198        93
+         COM     0.8646    0.8830    0.8737        94
+         LYM     0.9479    0.9681    0.9579        94
+         DEB     0.9780    0.9468    0.9622        94
+         MUC     0.9891    0.9785    0.9838        93
+         ADI     1.0000    0.9574    0.9783        94
+         EMP     0.9495    1.0000    0.9741        94
+
+    accuracy                         0.9493       750
+   macro avg     0.9501    0.9493    0.9495       750
+weighted avg     0.9501    0.9493    0.9495       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V3/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V3/f1_per_class.png
+[ablation] V3 terminé en 5.5 min
+
+############################################################
+# Variante V4 : Independent branches
+############################################################
+
+============================================================
+Entraînement V4 | 22.9M params | device=cuda
+============================================================
+  [V4] Ep 01/50 | loss 0.6235/0.2395 | acc 92.3% | F1 0.9221 | 15.1s
+  [V4] Ep 02/50 | loss 0.2894/0.2009 | acc 91.7% | F1 0.9159 | 15.1s
+  [V4] Ep 03/50 | loss 0.2228/0.2094 | acc 90.4% | F1 0.8975 | 15.1s
+  [V4] Ep 04/50 | loss 0.1917/0.1635 | acc 93.6% | F1 0.9361 | 15.1s
+  [V4] Ep 05/50 | loss 0.1791/0.1901 | acc 91.6% | F1 0.9142 | 15.2s
+  [V4] Ep 06/50 | loss 0.1619/0.1667 | acc 93.1% | F1 0.9297 | 15.2s
+  [V4] Ep 07/50 | loss 0.1473/0.1363 | acc 94.8% | F1 0.9483 | 15.1s
+  [V4] Ep 08/50 | loss 0.1213/0.1552 | acc 94.4% | F1 0.9426 | 15.2s
+  [V4] Ep 09/50 | loss 0.1209/0.1250 | acc 94.7% | F1 0.9454 | 15.1s
+  [V4] Ep 10/50 | loss 0.1350/0.1311 | acc 94.1% | F1 0.9409 | 15.1s
+  [V4] Ep 11/50 | loss 0.1058/0.1299 | acc 95.2% | F1 0.9519 | 15.2s
+  [V4] Ep 12/50 | loss 0.0906/0.1193 | acc 95.3% | F1 0.9527 | 15.2s
+                                                                                                                                                                                                                                                                                                                                                                                                                                    [V4] Ep 13/50 | loss 0.0838/0.1163 | acc 95.7% | F1 0.9571 | 16.2s
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             [V4] Ep 14/50 | loss 0.0822/0.1404 | acc 95.6% | F1 0.9564 | 16.6s
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [V4] Ep 15/50 | loss 0.0735/0.1558 | acc 94.8% | F1 0.9480 | 16.6s
+                                                                                                                                                                                                                                                                                          [V4] Ep 16/50 | loss 0.0705/0.1568 | acc 95.3% | F1 0.9526 | 15.8s
+  [V4] Ep 17/50 | loss 0.0522/0.1416 | acc 95.6% | F1 0.9559 | 15.1s
+  [V4] Ep 18/50 | loss 0.0794/0.1415 | acc 95.9% | F1 0.9589 | 15.1s
+  [V4] Ep 19/50 | loss 0.0614/0.1390 | acc 95.3% | F1 0.9542 | 15.1s
+  [V4] Ep 20/50 | loss 0.0463/0.1385 | acc 95.2% | F1 0.9518 | 15.2s
+  [V4] Ep 21/50 | loss 0.0537/0.1593 | acc 94.8% | F1 0.9478 | 15.1s
+  [V4] Ep 22/50 | loss 0.0486/0.1347 | acc 95.2% | F1 0.9517 | 15.1s
+  [V4] Ep 23/50 | loss 0.0376/0.1173 | acc 96.5% | F1 0.9651 | 15.1s
+  [V4] Ep 24/50 | loss 0.0324/0.1355 | acc 95.9% | F1 0.9583 | 15.1s
+  [V4] Ep 25/50 | loss 0.0368/0.1127 | acc 96.7% | F1 0.9666 | 15.1s
+  [V4] Ep 26/50 | loss 0.0282/0.1571 | acc 96.3% | F1 0.9626 | 15.2s
+  [V4] Ep 27/50 | loss 0.0324/0.1053 | acc 97.5% | F1 0.9746 | 15.1s
+  [V4] Ep 28/50 | loss 0.0344/0.1157 | acc 96.4% | F1 0.9636 | 15.1s
+  [V4] Ep 29/50 | loss 0.0217/0.1038 | acc 96.9% | F1 0.9690 | 15.1s
+  [V4] Ep 30/50 | loss 0.0269/0.1163 | acc 97.1% | F1 0.9705 | 15.1s
+  [V4] Ep 31/50 | loss 0.0255/0.1124 | acc 96.9% | F1 0.9695 | 15.1s
+  [V4] Ep 32/50 | loss 0.0184/0.1100 | acc 96.8% | F1 0.9679 | 15.2s
+  [V4] Ep 33/50 | loss 0.0149/0.1165 | acc 97.1% | F1 0.9706 | 15.1s
+  [V4] Ep 34/50 | loss 0.0145/0.1097 | acc 96.9% | F1 0.9692 | 15.1s
+  [V4] Ep 35/50 | loss 0.0143/0.0998 | acc 97.6% | F1 0.9759 | 15.1s
+  [V4] Ep 36/50 | loss 0.0153/0.1106 | acc 96.7% | F1 0.9666 | 15.1s
+  [V4] Ep 37/50 | loss 0.0123/0.1193 | acc 97.1% | F1 0.9705 | 15.1s
+  [V4] Ep 38/50 | loss 0.0123/0.1138 | acc 97.2% | F1 0.9720 | 15.2s
+  [V4] Ep 39/50 | loss 0.0112/0.1067 | acc 97.3% | F1 0.9732 | 15.2s
+  [V4] Ep 40/50 | loss 0.0093/0.1044 | acc 97.6% | F1 0.9760 | 15.1s
+  [V4] Ep 41/50 | loss 0.0083/0.1122 | acc 97.5% | F1 0.9746 | 15.1s
+  [V4] Ep 42/50 | loss 0.0080/0.1090 | acc 97.1% | F1 0.9705 | 15.1s
+  [V4] Ep 43/50 | loss 0.0110/0.1073 | acc 97.6% | F1 0.9760 | 15.1s
+  [V4] Ep 44/50 | loss 0.0115/0.1133 | acc 97.6% | F1 0.9760 | 15.2s
+  [V4] Ep 45/50 | loss 0.0093/0.1079 | acc 97.2% | F1 0.9719 | 15.1s
+  [V4] Early stopping à l'epoch 45.
+[utils] Courbes sauvegardées : results/training_curves/V4_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V4 (results/V4)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9780    0.9468    0.9622        94
+         STR     0.9213    0.8817    0.9011        93
+         COM     0.8485    0.8936    0.8705        94
+         LYM     0.9485    0.9787    0.9634        94
+         DEB     0.9681    0.9681    0.9681        94
+         MUC     1.0000    0.9892    0.9946        93
+         ADI     0.9890    0.9574    0.9730        94
+         EMP     0.9691    1.0000    0.9843        94
+
+    accuracy                         0.9520       750
+   macro avg     0.9528    0.9520    0.9521       750
+weighted avg     0.9528    0.9520    0.9521       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V4/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V4/f1_per_class.png
+[ablation] V4 terminé en 11.5 min
+
+############################################################
+# Variante V5 : Sequential training
+############################################################
+
+============================================================
+Entraînement V5 | 11.7M params | device=cuda
+============================================================
+  [V5] Phase 1 : entraînement L1 (20 epochs)
+    Phase1 ep 01 | val_acc=11.1%
+    Phase1 ep 02 | val_acc=4.0%
+    Phase1 ep 03 | val_acc=10.1%
+    Phase1 ep 04 | val_acc=14.5%
+    Phase1 ep 05 | val_acc=14.8%
+    Phase1 ep 06 | val_acc=12.7%
+    Phase1 ep 07 | val_acc=14.0%
+    Phase1 ep 08 | val_acc=11.6%
+    Phase1 ep 09 | val_acc=12.4%
+    Phase1 ep 10 | val_acc=13.6%
+    Phase1 ep 11 | val_acc=10.7%
+    Phase1 ep 12 | val_acc=8.7%
+    Phase1 ep 13 | val_acc=9.1%
+    Phase1 ep 14 | val_acc=9.5%
+    Phase1 ep 15 | val_acc=9.9%
+    Phase1 ep 16 | val_acc=9.3%
+    Phase1 ep 17 | val_acc=10.7%
+    Phase1 ep 18 | val_acc=11.6%
+    Phase1 ep 19 | val_acc=10.8%
+    Phase1 ep 20 | val_acc=9.5%
+  [V5] Phase 2 : entraînement L2 (30 epochs)
+    Phase2 ep 01 | F1=0.8967
+    Phase2 ep 02 | F1=0.9019
+    Phase2 ep 03 | F1=0.9100
+    Phase2 ep 04 | F1=0.9191
+    Phase2 ep 05 | F1=0.9231
+    Phase2 ep 06 | F1=0.9248
+    Phase2 ep 07 | F1=0.9296
+    Phase2 ep 08 | F1=0.9270
+    Phase2 ep 09 | F1=0.9315
+    Phase2 ep 10 | F1=0.9301
+    Phase2 ep 11 | F1=0.9339
+    Phase2 ep 12 | F1=0.9341
+    Phase2 ep 13 | F1=0.9417
+    Phase2 ep 14 | F1=0.9365
+    Phase2 ep 15 | F1=0.9361
+    Phase2 ep 16 | F1=0.9377
+    Phase2 ep 17 | F1=0.9441
+    Phase2 ep 18 | F1=0.9391
+    Phase2 ep 19 | F1=0.9403
+    Phase2 ep 20 | F1=0.9338
+    Phase2 ep 21 | F1=0.9364
+    Phase2 ep 22 | F1=0.9405
+    Phase2 ep 23 | F1=0.9348
+    Phase2 ep 24 | F1=0.9390
+    Phase2 ep 25 | F1=0.9390
+    Phase2 ep 26 | F1=0.9390
+    Phase2 ep 27 | F1=0.9469
+    Phase2 ep 28 | F1=0.9441
+    Phase2 ep 29 | F1=0.9401
+    Phase2 ep 30 | F1=0.9443
+[utils] Courbes sauvegardées : results/training_curves/V5_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V5 (results/V5)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9444    0.9043    0.9239        94
+         STR     0.7981    0.8925    0.8426        93
+         COM     0.7714    0.8617    0.8141        94
+         LYM     0.9560    0.9255    0.9405        94
+         DEB     0.9634    0.8404    0.8977        94
+         MUC     0.9890    0.9677    0.9783        93
+         ADI     0.9667    0.9255    0.9457        94
+         EMP     0.9485    0.9787    0.9634        94
+
+    accuracy                         0.9120       750
+   macro avg     0.9172    0.9120    0.9133       750
+weighted avg     0.9173    0.9120    0.9133       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V5/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V5/f1_per_class.png
+[ablation] V5 terminé en 5.4 min
+
+############################################################
+# Variante V6 : mHC-2 + Focal Loss
+############################################################
+
+============================================================
+Entraînement V6 | 11.7M params | device=cuda
+============================================================
+  [V6] Ep 01/50 | loss 0.5599/0.2166 | acc 91.7% | F1 0.9173 | 8.1s
+  [V6] Ep 02/50 | loss 0.2321/0.1707 | acc 92.1% | F1 0.9207 | 8.1s
+  [V6] Ep 03/50 | loss 0.1997/0.1867 | acc 91.3% | F1 0.9123 | 8.0s
+  [V6] Ep 04/50 | loss 0.1744/0.1282 | acc 93.6% | F1 0.9344 | 8.1s
+  [V6] Ep 05/50 | loss 0.1395/0.2014 | acc 89.6% | F1 0.8939 | 8.0s
+  [V6] Ep 06/50 | loss 0.1457/0.1615 | acc 92.1% | F1 0.9188 | 8.0s
+  [V6] Ep 07/50 | loss 0.1275/0.1839 | acc 93.1% | F1 0.9276 | 8.0s
+  [V6] Ep 08/50 | loss 0.1150/0.1780 | acc 92.4% | F1 0.9233 | 8.0s
+  [V6] Ep 09/50 | loss 0.1034/0.1068 | acc 96.0% | F1 0.9598 | 8.1s
+  [V6] Ep 10/50 | loss 0.0869/0.1575 | acc 93.9% | F1 0.9396 | 8.1s
+  [V6] Ep 11/50 | loss 0.0879/0.1138 | acc 94.4% | F1 0.9436 | 8.1s
+  [V6] Ep 12/50 | loss 0.0864/0.1140 | acc 95.1% | F1 0.9504 | 8.0s
+  [V6] Ep 13/50 | loss 0.0810/0.0982 | acc 96.1% | F1 0.9610 | 8.1s
+  [V6] Ep 14/50 | loss 0.0650/0.1165 | acc 95.6% | F1 0.9561 | 8.0s
+  [V6] Ep 15/50 | loss 0.0570/0.1108 | acc 95.1% | F1 0.9499 | 8.1s
+  [V6] Ep 16/50 | loss 0.0536/0.1800 | acc 92.1% | F1 0.9187 | 8.1s
+  [V6] Ep 17/50 | loss 0.0573/0.1129 | acc 95.2% | F1 0.9521 | 8.1s
+  [V6] Ep 18/50 | loss 0.0472/0.0967 | acc 96.0% | F1 0.9599 | 8.1s
+  [V6] Ep 19/50 | loss 0.0524/0.0962 | acc 95.3% | F1 0.9531 | 8.0s
+  [V6] Ep 20/50 | loss 0.0437/0.1023 | acc 95.3% | F1 0.9535 | 8.0s
+  [V6] Ep 21/50 | loss 0.0339/0.1051 | acc 95.5% | F1 0.9547 | 8.0s
+  [V6] Ep 22/50 | loss 0.0335/0.1171 | acc 95.5% | F1 0.9549 | 8.1s
+  [V6] Ep 23/50 | loss 0.0329/0.1271 | acc 95.1% | F1 0.9502 | 8.1s
+  [V6] Early stopping à l'epoch 23.
+[utils] Courbes sauvegardées : results/training_curves/V6_curves.png
+/media/badr/SSD_1Tb/BOUARAFA_BADR_MCRS_2025/ablation_crc/evaluate.py:199: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(checkpoint, map_location=device)
+
+============================================================
+Résultats V6 (results/V6)
+============================================================
+              precision    recall  f1-score   support
+
+         TUM     0.9565    0.9362    0.9462        94
+         STR     0.8700    0.9355    0.9016        93
+         COM     0.8621    0.7979    0.8287        94
+         LYM     0.8750    0.9681    0.9192        94
+         DEB     0.9775    0.9255    0.9508        94
+         MUC     0.9890    0.9677    0.9783        93
+         ADI     1.0000    0.9362    0.9670        94
+         EMP     0.9495    1.0000    0.9741        94
+
+    accuracy                         0.9333       750
+   macro avg     0.9350    0.9334    0.9332       750
+weighted avg     0.9350    0.9333    0.9332       750
+
+[evaluate] Matrice de confusion sauvegardée : results/V6/confusion_matrix.png
+[evaluate] F1 par classe sauvegardé : results/V6/f1_per_class.png
+[ablation] V6 terminé en 3.1 min
+
+[ablation] Résumé sauvegardé : results/ablation_summary.json
+
+───────────────────────────────────────────────────────────────────────────
+ID    Variante                          Acc%   F1-macro   F1-minor   Params
+───────────────────────────────────────────────────────────────────────────
+V1    Flat baseline                    95.47     0.9553     0.9788    11.4M
+V2    mHC-2 (Ours)                     95.87     0.9588     0.9763    11.7M ◀
+V3    mHC-3 (3 levels)                 94.93     0.9495     0.9681    12.0M
+V4    Independent branches             95.20     0.9521     0.9762    22.9M
+V5    Sequential training              91.20     0.9133     0.9305    11.7M
+V6    mHC-2 + Focal Loss               93.33     0.9332     0.9625    11.7M
+───────────────────────────────────────────────────────────────────────────
+
+[utils] CSV sauvegardé : results/ablation_table.csv
+[ablation] CSV sauvegardé : results/ablation_table.csv
+[utils] Barplot sauvegardé : results/ablation_barplot.png
+[utils] F1-minority comparison sauvegardé : results/ablation_f1_minority.png
+
+[ablation] Étude complète terminée en 37.5 min.

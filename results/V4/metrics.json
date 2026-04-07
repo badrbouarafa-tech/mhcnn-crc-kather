@@ -1,0 +1,17 @@
+{
+  "accuracy": 95.2,
+  "f1_macro": 0.9521,
+  "f1_weighted": 0.9521,
+  "f1_minority": 0.9762,
+  "f1_per_class": {
+    "TUM": 0.9622,
+    "STR": 0.9011,
+    "COM": 0.8705,
+    "LYM": 0.9634,
+    "DEB": 0.9681,
+    "MUC": 0.9946,
+    "ADI": 0.973,
+    "EMP": 0.9843
+  },
+  "variant": "V4"
+}
