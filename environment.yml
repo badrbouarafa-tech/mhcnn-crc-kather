@@ -1,0 +1,24 @@
+name: mhcnn_crc
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  # PyTorch — via canal officiel pytorch
+  - pytorch=2.1.0
+  - torchvision=0.16.0
+  - torchaudio=2.1.0
+  - pytorch-cuda=12.1
+  # Scientific Python
+  - numpy>=1.24.0
+  - pandas>=2.0.0
+  - scikit-learn>=1.3.0
+  - matplotlib>=3.7.0
+  - seaborn>=0.12.0
+  - Pillow>=9.5.0
+  - tqdm>=4.65.0
+  - pip:
+    - microtype
