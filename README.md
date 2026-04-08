@@ -60,14 +60,41 @@ mhcnn-crc-kather/
 │   ├── ablation.py       # Main orchestrator — runs all 6 variants
 │   └── utils.py          # Visualisations, barplots, CSV export
 ├── results/
-│   ├── ablation_summary.txt
+│   ├── ablation_summary.json
 │   ├── ablation_barplot.png
+│   ├── ablation_table.csv
+│   ├── ablation_f1_minority.png
+│   ├── V1/
+│   │   ├── confusion_matrix.png
+│   │   └── f1_per_class.png
+│   │   └── metrics.json
 │   ├── V2/
 │   │   ├── confusion_matrix.png
 │   │   └── f1_per_class.png
+│   │   └── metrics.json
+│   ├── V3/
+│   │   ├── confusion_matrix.png
+│   │   └── f1_per_class.png
+│   │   └── metrics.json
+│   ├── V4/
+│   │   ├── confusion_matrix.png
+│   │   └── f1_per_class.png
+│   │   └── metrics.json
+│   ├── V5/
+│   │   ├── confusion_matrix.png
+│   │   └── f1_per_class.png
+│   │   └── metrics.json
+│   ├── V6/
+│   │   ├── confusion_matrix.png
+│   │   └── f1_per_class.png
+│   │   └── metrics.json
 │   └── training_curves/
-│       ├── V2_curves.png
-│       └── V5_curves.png
+│       ├── V1_curves.png
+│       └── V2_curves.png
+│       ├── V3_curves.png
+│       └── V4_curves.png
+│       ├── V5_curves.png
+│       └── V6_curves.png
 ├── requirements.txt
 ├── environment.yml
 └── README.md
